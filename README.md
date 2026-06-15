@@ -118,6 +118,8 @@ Execute o projeto:
 python -m src.main
 ```
 
+Veja um exemplo de saída em [`docs/exemplo-execucao.md`](docs/exemplo-execucao.md).
+
 O projeto irá:
 
 - criar o banco SQLite em `data/lab.db`;
