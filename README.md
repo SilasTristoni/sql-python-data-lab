@@ -150,6 +150,11 @@ Execute os testes com:
 pytest
 ```
 
+## Testes automatizados
+
+O projeto possui um workflow do GitHub Actions em `.github/workflows/tests.yml`.
+Ele executa os testes Python automaticamente em eventos de `push` e `pull_request`, usando Python 3.11.
+
 ---
 
 ## 🚀 Ideias de evolução
