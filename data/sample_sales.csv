@@ -1,0 +1,11 @@
+order_id,order_date,customer,product,category,quantity,unit_price
+1001,2026-01-05,Ana Souza,Notebook,Eletronicos,1,3500.00
+1002,2026-01-07,Bruno Lima,Mouse,Perifericos,2,89.90
+1003,2026-01-10,Camila Rocha,Teclado,Perifericos,1,199.90
+1004,2026-01-12,Diego Alves,Monitor,Eletronicos,1,899.00
+1005,2026-01-15,Ana Souza,Headset,Perifericos,1,249.90
+1006,2026-02-02,Eduarda Martins,Cadeira Gamer,Moveis,1,1199.00
+1007,2026-02-06,Felipe Costa,Mouse,Perifericos,1,89.90
+1008,2026-02-09,Giovana Reis,Notebook,Eletronicos,1,4200.00
+1009,2026-02-14,Henrique Dias,Mesa,Moveis,1,699.00
+1010,2026-02-20,Isabela Nunes,Monitor,Eletronicos,2,899.00
