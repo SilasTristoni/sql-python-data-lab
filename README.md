@@ -125,7 +125,8 @@ O projeto irá:
 - criar o banco SQLite em `data/lab.db`;
 - carregar os dados de `data/sample_sales.csv`;
 - calcular indicadores básicos;
-- exibir um resumo no terminal.
+- exibir um resumo no terminal;
+- gerar o relatório CSV em `reports/summary.csv`.
 
 ---
 

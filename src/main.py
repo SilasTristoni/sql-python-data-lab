@@ -13,6 +13,7 @@ from src.database import (
     insert_sales,
     read_sales_from_csv,
 )
+from src.reports import export_summary_report
 
 
 def main() -> None:
@@ -30,6 +31,12 @@ def main() -> None:
     best_product = get_best_selling_product(sales)
     revenue_by_category = get_revenue_by_category(sales)
     customer_ranking = get_customer_ranking(sales)
+    summary_report_path = export_summary_report(
+        total_orders=total_orders,
+        total_revenue=total_revenue,
+        average_ticket=average_ticket,
+        best_selling_product=best_product,
+    )
 
     print("=== SQL Python Data Lab ===")
     print(f"Total de pedidos: {total_orders}")
@@ -50,6 +57,8 @@ def main() -> None:
             f"R$ {item['total_revenue']:.2f}, "
             f"ticket medio R$ {item['average_ticket']:.2f}"
         )
+
+    print(f"\nRelatorio CSV gerado em: {summary_report_path}")
 
 
 if __name__ == "__main__":
