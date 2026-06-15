@@ -14,7 +14,7 @@ A recomendação é criar uma branch e um Pull Request para cada melhoria pequen
 ## Etapa 2 - SQL
 
 - [ ] Criar consultas com `JOIN`.
-- [ ] Criar análise mensal de faturamento.
+- [x] Criar análise mensal de faturamento com consulta em `sql/05_monthly_revenue.sql`.
 - [x] Criar ranking de clientes com consulta em `sql/04_customer_ranking.sql`.
 - [ ] Criar ranking de produtos.
 - [ ] Criar análise por categoria.
