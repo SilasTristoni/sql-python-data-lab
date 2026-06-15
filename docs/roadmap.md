@@ -15,7 +15,7 @@ A recomendação é criar uma branch e um Pull Request para cada melhoria pequen
 
 - [ ] Criar consultas com `JOIN`.
 - [ ] Criar análise mensal de faturamento.
-- [ ] Criar ranking de clientes.
+- [x] Criar ranking de clientes com consulta em `sql/04_customer_ranking.sql`.
 - [ ] Criar ranking de produtos.
 - [ ] Criar análise por categoria.
 
