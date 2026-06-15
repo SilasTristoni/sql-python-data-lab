@@ -3,6 +3,7 @@ from src.analysis import (
     calculate_total_revenue,
     count_orders,
     get_best_selling_product,
+    get_customer_ranking,
     get_revenue_by_category,
 )
 
@@ -59,3 +60,26 @@ def test_get_revenue_by_category():
         "Categoria 1": 50.0,
         "Categoria 2": 50.0,
     }
+
+
+def test_get_customer_ranking():
+    assert get_customer_ranking(SAMPLE_SALES) == [
+        {
+            "customer": "Cliente B",
+            "total_orders": 1,
+            "total_revenue": 50.0,
+            "average_ticket": 50.0,
+        },
+        {
+            "customer": "Cliente C",
+            "total_orders": 1,
+            "total_revenue": 30.0,
+            "average_ticket": 30.0,
+        },
+        {
+            "customer": "Cliente A",
+            "total_orders": 1,
+            "total_revenue": 20.0,
+            "average_ticket": 20.0,
+        },
+    ]
