@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Dict, Iterable, List, TypedDict
+from typing import Dict, Iterable, List, Set, TypedDict
 
 
 class Sale(TypedDict):
@@ -10,6 +10,13 @@ class Sale(TypedDict):
     category: str
     quantity: int
     unit_price: float
+
+
+class CustomerRankingItem(TypedDict):
+    customer: str
+    total_orders: int
+    total_revenue: float
+    average_ticket: float
 
 
 def calculate_total_revenue(sales: Iterable[Sale]) -> float:
@@ -53,3 +60,32 @@ def get_best_selling_product(sales: Iterable[Sale]) -> str:
         return "Nenhum produto encontrado"
 
     return max(quantities, key=quantities.get)
+
+
+def get_customer_ranking(sales: Iterable[Sale]) -> List[CustomerRankingItem]:
+    """Return customers ordered by highest revenue."""
+    revenues: Dict[str, float] = defaultdict(float)
+    orders: Dict[str, Set[int]] = defaultdict(set)
+
+    for item in sales:
+        customer = item["customer"]
+        revenues[customer] += item["quantity"] * item["unit_price"]
+        orders[customer].add(item["order_id"])
+
+    ranking: List[CustomerRankingItem] = []
+
+    for customer, total in revenues.items():
+        total_orders = len(orders[customer])
+        total_revenue = round(total, 2)
+        average_ticket = round(total_revenue / total_orders, 2) if total_orders else 0.0
+
+        ranking.append(
+            {
+                "customer": customer,
+                "total_orders": total_orders,
+                "total_revenue": total_revenue,
+                "average_ticket": average_ticket,
+            }
+        )
+
+    return sorted(ranking, key=lambda item: item["total_revenue"], reverse=True)

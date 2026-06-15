@@ -3,6 +3,7 @@ from src.analysis import (
     calculate_total_revenue,
     count_orders,
     get_best_selling_product,
+    get_customer_ranking,
     get_revenue_by_category,
 )
 from src.database import (
@@ -28,6 +29,7 @@ def main() -> None:
     average_ticket = calculate_average_ticket(sales)
     best_product = get_best_selling_product(sales)
     revenue_by_category = get_revenue_by_category(sales)
+    customer_ranking = get_customer_ranking(sales)
 
     print("=== SQL Python Data Lab ===")
     print(f"Total de pedidos: {total_orders}")
@@ -38,6 +40,16 @@ def main() -> None:
 
     for category, revenue in sorted(revenue_by_category.items()):
         print(f"- {category}: R$ {revenue:.2f}")
+
+    print("\nTop 3 clientes por faturamento:")
+
+    for item in customer_ranking[:3]:
+        print(
+            f"- {item['customer']}: "
+            f"{item['total_orders']} pedido(s), "
+            f"R$ {item['total_revenue']:.2f}, "
+            f"ticket medio R$ {item['average_ticket']:.2f}"
+        )
 
 
 if __name__ == "__main__":
